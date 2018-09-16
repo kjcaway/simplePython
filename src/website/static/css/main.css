@@ -1,0 +1,76 @@
+html,
+body {
+  height: 100%;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.sl-btn{
+  text-decoration: none;
+  font-size:12px;
+  color:white;
+  padding:10px 20px 10px 20px;
+  margin:20px;
+  display:inline-block;
+  border-radius: 10px;
+  transition:all 0.1s;
+  text-shadow: 0px -2px rgba(0, 0, 0, 0.44);
+}
+
+.sl-btn.blue{
+  background-color: #1f75d9;
+  border-bottom:5px solid #165195;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.pl10 {
+  padding-left:10%;
+}
+.pl20p {
+  padding-left:20px;
+}
+
+span.blue{
+  color: blue;
+}
