@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}
+HOME
+{% endblock %}
+{% block link %}
+{{super() }}
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <h1>회원관리</h1>
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>아이디</th>
+            <th>가입일</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ members}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+{% endblock %}

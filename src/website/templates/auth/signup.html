@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block title %}
+SIGNUP
+{% endblock %}
+{% block link %}
+{{super() }}
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<form id="signupForm" action="signup" method="post" class="form-signin">
+  <h2 class="form-signin-heading">회원가입</h2>
+  <label for="userid" class="sr-only">아이디 : </label>
+  <input type="text" id="userid" name="userid" placeholder="아이디" class="form-control" required autofocus />
+  <br />
+  <label for="passwd" class="sr-only">비밀번호 : </label>
+  <input type="password" id="passwd" name="passwd" placeholder="비밀번호" class="form-control" required />
+  <label for="passwd_again" class="sr-only">비밀번호 확인 : </label>
+  <input type="password" id="passwd_again" name="passwd_again" placeholder="비밀번호 확인" class="form-control" required />
+  <a href="#" class="sl-btn blue" onclick="fncSubmit(); return false;">가입하기</a>
+</form>
+{% endblock %}
