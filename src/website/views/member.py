@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect
 
-from .. import database
+# from .. import database
 
 blueprint = Blueprint('member', __name__)
 
