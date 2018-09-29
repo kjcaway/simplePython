@@ -23,39 +23,13 @@ HOME
           </tr>
         </thead>
         <tbody>
+          {% for member in members %}
           <tr>
-            <td>
-              3
-            </td>
-            <td>
-              ssss
-            </td>
-            <td>
-              2010-20-10
-            </td>
+            <td>{{ loop.index }}</td>
+            <td>{{ member.userid }}</td>
+            <td>{{ member.created }}</td>
           </tr>
-          <tr>
-            <td>
-              3
-            </td>
-            <td>
-              ssss
-            </td>
-            <td>
-              2010-20-10
-            </td>
-          </tr>
-          <tr>
-            <td>
-              3
-            </td>
-            <td>
-              ssss
-            </td>
-            <td>
-              2010-20-10
-            </td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
