@@ -3,7 +3,7 @@ MAINTAINER www.github.com/kjcaway
 
 RUN pip install Flask
 RUN pip install pymongo
-
+RUN pip install datetime
 
 COPY . /app/
 

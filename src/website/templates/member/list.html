@@ -27,7 +27,7 @@ HOME
           <tr>
             <td>{{ loop.index }}</td>
             <td>{{ member.userid }}</td>
-            <td>{{ member.created }}</td>
+            <td>{{ member.created.strftime("%Y-%m-%d %H:%M:%S") }}</td>
           </tr>
           {% endfor %}
         </tbody>
