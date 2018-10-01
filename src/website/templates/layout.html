@@ -22,13 +22,13 @@
 
     <div class="collapse navbar-collapse pl20p" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item {% if nav == 'home' %}active{% endif %}">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {% if nav == 'about' %}active{% endif %}">
           <a class="nav-link" href="/about/">About <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown {% if nav == 'admin' %}active{% endif %}">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Admin</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
@@ -45,14 +45,14 @@
     </div>
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="/auth/signin">로그인</a>
+        <a class="nav-link" href="/auth/signin">SignIn</a>
       </li>
     </ul>
   </nav>
 
   <div class="nav-scroller bg-white shadow-sm my-secNav">
     <nav class="nav nav-underline">
-      <a class="nav-link active" href="#">home > member</a>
+      <a class="nav-link active" href="#">{{ loc }}</a>
     </nav>
   </div>
 
@@ -61,6 +61,7 @@
   {% block footer %}
   <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
   <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/common.js')}}"></script>
   {% endblock %}
 </body>
 
