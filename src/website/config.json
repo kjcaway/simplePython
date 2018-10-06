@@ -1,5 +1,7 @@
 {
   "mongodb_host" : "172.30.42.121",
   "mongodb_port" : "27017",
-  "mongodb_name" : "test"
+  "mongodb_name" : "test",
+
+  "app_secret_key":"jckang1234!@#$"
 }

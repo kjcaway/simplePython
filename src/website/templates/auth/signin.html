@@ -21,3 +21,23 @@ SIGNIN
   <a href="/auth/signup" class="sl-btn blue">회원가입</a>
 </form>
 {% endblock %}
+
+{% block footer %}
+<script>
+  function fncSubmit() {
+      var form = document.getElementById('signinForm');
+      var userId = form.userid.value;
+      var passWd = form.passwd.value;
+
+      if(userId == ''){
+        alert("아이디를 입력하세요.");
+        return false;
+      }
+      if(passWd == ''){
+        alert("비밀번호를 입력하세요.");
+        return false;
+      }
+      form.submit();
+    }
+</script>
+{% endblock %}

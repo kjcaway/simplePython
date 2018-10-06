@@ -13,7 +13,7 @@ HOME
 
     <div class="starter-template">
       <h1>Hello
-        <span class="blue">xx님</span>
+        <span class="blue">{% if session.userid %}{{session.userid}}{% endif %}</span>
       </h1>
       <p class="lead">여기는 홈페이지 입니다. 환영합니다~</p>
     </div>

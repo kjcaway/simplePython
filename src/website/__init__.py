@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g
+from flask import Flask, render_template, g, session
 import logging
 from pymongo import MongoClient
 from datetime import datetime
@@ -21,6 +21,8 @@ configfile_path = os.path.join(websitedir, configfile)
 with open(configfile_path, 'r') as f:
   config = json.load(f)
 
+app.secret_key = config['app_secret_key']
+
 def get_db():
   client = MongoClient('mongodb://' + config['mongodb_host'] + ':' + config['mongodb_port'] + '/')
   db = client[config['mongodb_name']]
@@ -36,6 +38,9 @@ def before_request():
   mylogger.info('before_request execute..')
   g.db = get_db()
 
+@app.context_processor
+def context_processor():
+  return {"session":session}
 
 from .views import home
 from .views import auth
