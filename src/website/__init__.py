@@ -23,20 +23,15 @@ with open(configfile_path, 'r') as f:
 
 app.secret_key = config['app_secret_key']
 
-def get_db():
-  client = MongoClient('mongodb://' + config['mongodb_host'] + ':' + config['mongodb_port'] + '/')
-  db = client[config['mongodb_name']]
 
-  return db
+client = MongoClient('mongodb://' + config['mongodb_host'] + ':' + config['mongodb_port'] + '/')
+db = client[config['mongodb_name']]
+
 
 @app.errorhandler(404)
 def not_found(error):
   return render_template('404.html') ,404
 
-@app.before_request
-def before_request():
-  mylogger.info('before_request execute..')
-  g.db = get_db()
 
 @app.context_processor
 def context_processor():

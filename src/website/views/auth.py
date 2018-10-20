@@ -1,29 +1,27 @@
 from flask import Blueprint, render_template
 from flask import request, redirect, flash, session, g
+from .. import db
 
 blueprint = Blueprint('auth', __name__)
 
-loc = 'Sign In'
-
 @blueprint.route('/signin', methods=['GET'])
 def signin():
-  return render_template('auth/signin.html', loc=loc)
+  return render_template('auth/signin.html')
 
 @blueprint.route('/signin', methods=['POST'])
 def signin_post():
 
-  db = getattr(g, 'db', None)
   if db is not None:
     user = db.members.find_one({'userid':request.form['userid']})
     if user is None:
       error = 'invalid userid'
       flash('Invalid userid!')
-      return render_template('auth/signin.html', loc=loc, error=error )
+      return render_template('auth/signin.html', error=error )
 
     elif user['password'] != request.form['passwd']:
       error = 'invalid password'
       flash('Invalid password')
-      return render_template('auth/signin.html', loc=loc, error=error)
+      return render_template('auth/signin.html', error=error)
 
     else:
         session['userid'] = user['userid']
@@ -33,9 +31,7 @@ def signin_post():
 
 @blueprint.route('/signup')
 def signup():
-  loc = 'Sign Up'
-
-  return render_template('auth/signup.html', loc=loc)
+  return render_template('auth/signup.html')
 
 @blueprint.route('/logout')
 def logout():

@@ -54,12 +54,6 @@
     </ul>
   </nav>
 
-  <div class="nav-scroller bg-white shadow-sm my-secNav">
-    <nav class="nav nav-underline">
-      <a class="nav-link active" href="#">{{ loc }}</a>
-    </nav>
-  </div>
-
   {% with messages = get_flashed_messages() %}
     {% if messages %}
       {% for message in messages %}
