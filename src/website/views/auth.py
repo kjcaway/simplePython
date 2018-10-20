@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from flask import request, redirect, flash, session, g
 from .. import db
+from datetime import datetime
 
 blueprint = Blueprint('auth', __name__)
 
@@ -29,9 +30,29 @@ def signin_post():
         return redirect('/')  
 
 
-@blueprint.route('/signup')
+@blueprint.route('/signup', methods=['GET'])
 def signup():
   return render_template('auth/signup.html')
+
+@blueprint.route('/signup', methods=['POST'])
+def signup_post():
+  if db is not None:
+    user = db.members.find_one({'userid':request.form['userid']})
+    if user is not None:
+      error = 'already exist'
+      flash('Already exist ID. Please the other ID')
+      return render_template('auth/signup.html', error=error )
+
+    member = {
+      "userid" : request.form['userid'],
+      "password" : request.form['passwd'],
+      "created" : datetime.now()
+    }
+
+    db.members.insert(member)
+
+    flash('Create Account')
+    return redirect('/auth/signin')  
 
 @blueprint.route('/logout')
 def logout():

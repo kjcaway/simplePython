@@ -8,16 +8,43 @@ SIGNUP
 
 {% block body %}
 {{ super() }}
+<div class="container">
+  <form id="signupForm" action="signup" method="post" class="form-signin">
+    <h2 class="form-signin-heading">SIGN UP</h2>
+    <label for="userid" class="sr-only">ID : </label>
+    <input type="text" id="userid" name="userid" placeholder="ID" class="form-control" required autofocus />
+    <br />
+    <label for="passwd" class="sr-only">PASSWORD : </label>
+    <input type="password" id="passwd" name="passwd" placeholder="PASSWORD" class="form-control" required />
+    <label for="passwd_again" class="sr-only">PASSWORD AGAIN : </label>
+    <input type="password" id="passwd_again" name="passwd_again" placeholder="PASSWORD AGAIN" class="form-control" required />
+    <a href="#" class="sl-btn blue" onclick="fncSubmit(); return false;">Sign up</a>
+  </form>
+</div>
+{% endblock %}
 
-<form id="signupForm" action="signup" method="post" class="form-signin">
-  <h2 class="form-signin-heading">회원가입</h2>
-  <label for="userid" class="sr-only">아이디 : </label>
-  <input type="text" id="userid" name="userid" placeholder="아이디" class="form-control" required autofocus />
-  <br />
-  <label for="passwd" class="sr-only">비밀번호 : </label>
-  <input type="password" id="passwd" name="passwd" placeholder="비밀번호" class="form-control" required />
-  <label for="passwd_again" class="sr-only">비밀번호 확인 : </label>
-  <input type="password" id="passwd_again" name="passwd_again" placeholder="비밀번호 확인" class="form-control" required />
-  <a href="#" class="sl-btn blue" onclick="fncSubmit(); return false;">가입하기</a>
-</form>
+{% block footer %}
+{{ super() }}
+<script>
+  function fncSubmit() {
+      var form = document.getElementById('signupForm');
+      var userId = form.userid.value;
+      var passWd = form.passwd.value;
+      var passWdAgain = form.passwd_again.value;
+
+      if(userId == ''){
+        alert("please ID");
+        return false;
+      }
+      if(passWd == ''){
+        alert("please Password");
+        return false;
+      }
+      if(passWd != passWdAgain){
+        alert("not match password and again password");
+        return false;
+      }
+      form.submit();
+    }
+</script>
 {% endblock %}

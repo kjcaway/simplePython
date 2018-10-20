@@ -9,15 +9,16 @@ HOME
 {% block body %}
 {{ super() }}
 
-<div class="starter-template">
-  <h1>회원관리</h1>
+<div class="container">
+  <h1>Member Manage</h1>
   <div class="table-responsive">
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th>No</th>
-          <th>아이디</th>
-          <th>가입일</th>
+          <th>No.</th>
+          <th>ID</th>
+          <th>Created Date</th>
+          <th>Encrypted</th>
         </tr>
       </thead>
       <tbody>
@@ -26,6 +27,7 @@ HOME
           <td>{{ loop.index }}</td>
           <td>{{ member.userid }}</td>
           <td>{{ member.created.strftime("%Y-%m-%d %H:%M:%S") }}</td>
+          <td>{% if member.password | length > 20 %}YES{% else %}NO{% endif %}</td>
         </tr>
         {% endfor %}
       </tbody>

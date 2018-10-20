@@ -1,7 +1,6 @@
 from flask import Flask, render_template, g, session
 import logging
 from pymongo import MongoClient
-from datetime import datetime
 import json
 import os
 

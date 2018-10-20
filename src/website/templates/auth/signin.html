@@ -10,15 +10,15 @@ SIGNIN
 {{ super() }}
 <div class="container">
   <form id="signinForm" action="signin" method="post" class="form-signin">
-    <h2 class="form-signin-heading">로그인</h2>
-    <label for="userid" class="sr-only">아이디 : </label>
-    <input type="text" id="userid" name="userid" placeholder="아이디" class="form-control" required autofocus />
+    <h2 class="form-signin-heading">Login</h2>
+    <label for="userid" class="sr-only">ID : </label>
+    <input type="text" id="userid" name="userid" placeholder="ID" class="form-control" required autofocus />
     <br />
-    <label for="passwd" class="sr-only">비밀번호 : </label>
-    <input type="password" id="passwd" name="passwd" placeholder="비밀번호" class="form-control" required />
+    <label for="passwd" class="sr-only">PASSWORD : </label>
+    <input type="password" id="passwd" name="passwd" placeholder="PASSWORD" class="form-control" required />
     <br />
-    <a href="#" onclick="fncSubmit(); return false;" class="sl-btn blue">로그인</a>
-    <a href="/auth/signup" class="sl-btn blue">회원가입</a>
+    <a href="#" onclick="fncSubmit(); return false;" class="sl-btn blue">Login</a>
+    <a href="/auth/signup" class="sl-btn blue">SignUp</a>
   </form>
 </div>
 {% endblock %}
@@ -32,11 +32,11 @@ SIGNIN
       var passWd = form.passwd.value;
 
       if(userId == ''){
-        alert("아이디를 입력하세요.");
+        alert("please ID");
         return false;
       }
       if(passWd == ''){
-        alert("비밀번호를 입력하세요.");
+        alert("please Password");
         return false;
       }
       form.submit();
