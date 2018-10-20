@@ -8,7 +8,6 @@
   <title>{% block title %}LAYOUT{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/my.css')}}">
   {% block link %}{% endblock %}
 </head>
 
@@ -54,15 +53,20 @@
     </ul>
   </nav>
 
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert-danger" role="alert">{{ message }}</div>
-      {% endfor %}
-    {% endif %}
-  {% endwith %}
 
-  {% block body %}{% endblock %}
+  <main role="main" class="container">
+    {% block body %}{% endblock %}
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="container alert {% if error %}alert-danger{% else %}alert-success{% endif %} center-block" role="alert">{{message }}</div>
+    {% endfor %}
+    {% else %}
+    <div class="container"></div>
+    {% endif %}
+    {% endwith %}
+  </main>
 
   {% block footer %}
   <script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>

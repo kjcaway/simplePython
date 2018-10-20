@@ -3,20 +3,18 @@
 HOME
 {% endblock %}
 {% block link %}
-  {{super() }}
+{{super() }}
 {% endblock %}
 
 {% block body %}
-  {{ super() }}
+{{ super() }}
 
-  <main role="main" class="container">
 
-    <div class="starter-template">
-      <h1>Hello
-        <span class="blue">{% if session.userid %}{{session.userid}}{% endif %}</span>
-      </h1>
-      <p class="lead">여기는 홈페이지 입니다. 환영합니다~</p>
-    </div>
+<div class="starter-template container">
+  <h1>Hello
+    <span class="blue">{% if session.userid %}{{session.userid}}{% endif %}</span>
+  </h1>
+  <p class="lead">여기는 홈페이지 입니다. 환영합니다~</p>
+</div>
 
-  </main>
 {% endblock %}
