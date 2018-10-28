@@ -4,9 +4,10 @@ MAINTAINER www.github.com/kjcaway
 RUN pip install Flask
 RUN pip install pymongo
 RUN pip install datetime
+RUN pip install Flask-Babel
 
 COPY . /app/
 
-WORKDIR /app/src/
+WORKDIR /app/
 
-CMD python run.py
+CMD sh cmd.sh
