@@ -7,3 +7,4 @@
 - jQuery : 3.3.1
 - pymongo : 3.7.2
 - Flask : 1.0.2
+- Flask-Babel : 0.12.2
