@@ -5,6 +5,7 @@ RUN pip install Flask
 RUN pip install pymongo
 RUN pip install datetime
 RUN pip install Flask-Babel
+RUN pip install mongoengine
 
 COPY . /app/
 
