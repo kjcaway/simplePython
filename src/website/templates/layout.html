@@ -27,13 +27,14 @@
         <li class="nav-item {% if nav == 'about' %}active{% endif %}">
           <a class="nav-link" href="/about/">About <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item {% if nav == 'board' %}active{% endif %}">
+          <a class="nav-link" href="/board/">Board <span class="sr-only">(current)</span></a>
+        </li>
         <li class="nav-item dropdown {% if nav == 'admin' %}active{% endif %}">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="false">Admin</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
             <a class="dropdown-item" href="/member/">Members List</a>
-            <a class="dropdown-item" href="/asdf">...</a>
-            <a class="dropdown-item" href="/ere">...</a>
           </div>
         </li>
       </ul>
