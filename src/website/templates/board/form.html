@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block title %}
+HOME
+{% endblock %}
+{% block link %}
+{{super() }}
+{% endblock %}
+
+{% block body %}
+{{ super() }}
+
+<div class="container">
+  <h1>Write something.</h1>
+  <hr class="featurette-divider">
+  <form action='./form' method="post">
+    <div class="form-group row">
+      <label for="writer" class="col-sm-2 col-form-label">Writer</label>
+      <div class="col-sm-10">
+        <input type="text" readonly class="form-control-plaintext" id="writer" name="writer" value="{{ session.userid if session.userid else 'anonymous'}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="title" class="col-sm-2 col-form-label">Title</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="contents" class="col-sm-2 col-form-label">Contents</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="contents" rows="3" name="contents"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">Tags</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Post</button>
+        <a href="/board" class="btn btn-secondary" >Back</a>
+      </div>
+    </div>
+  </form>
+
+
+</div><!-- /.container -->
+
+{% endblock %}
