@@ -7,7 +7,7 @@ blueprint = Blueprint('board', __name__)
 @blueprint.route('/')
 def index():
 
-  return render_template('board/list.html', collection=Board.objects)
+  return render_template('board/list.html', collection=Board.objects.order_by('-date'))
 
 
 @blueprint.route('/form', methods=['GET'])

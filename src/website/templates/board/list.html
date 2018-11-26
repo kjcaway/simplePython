@@ -18,7 +18,7 @@ HOME
   <div class="row featurette">
     <div class="col-md-7">
       <span class="badge badge-info">{{board.writer}}</span>
-      <h2 class="featurette-heading">{{ board.title }} <small class="text-muted">{{board.date}}</small></h2>
+      <h2 class="featurette-heading">{{ board.title }} <small class="text-muted">{{board.date | datetime}}</small></h2>
       <p class="lead">{{board.contents}}</p>
     </div>
     <div class="col-md-5">

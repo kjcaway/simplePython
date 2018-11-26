@@ -54,5 +54,7 @@ app.register_blueprint(member.blueprint, url_prefix='/member')
 app.register_blueprint(board.blueprint, url_prefix='/board')
 
 
+from .filter import *
 
+app.jinja_env.filters['datetime'] = format_datetime
 
