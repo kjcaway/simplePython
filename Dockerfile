@@ -6,6 +6,7 @@ RUN pip install pymongo
 RUN pip install datetime
 RUN pip install Flask-Babel
 RUN pip install mongoengine
+RUN pip install cuid
 
 COPY . /app/
 

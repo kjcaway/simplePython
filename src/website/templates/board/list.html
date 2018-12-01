@@ -9,7 +9,7 @@ HOME
 {% block body %}
 {{ super() }}
 
-<div class="container marketing">
+<div class="container marketing mylist">
 
   <!-- START THE FEATURETTES -->
   <h1>Posts</h1>
@@ -22,7 +22,9 @@ HOME
       <p class="lead">{{board.contents}}</p>
     </div>
     <div class="col-md-5">
-      <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="image">
+      {% if board.attached.filename %}
+      <img class="my-list-img featurette-image img-fluid mx-auto" src="data:image/{{board.attached.file_ext}};base64,{{mapper[board.attached.filename_cuid]}}" alt="{{ board.attached.filename }}">
+      {% endif %}
     </div>
   </div>
   <hr class="featurette-divider">

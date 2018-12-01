@@ -134,3 +134,13 @@ span.blue{
   text-align: center;
   width: 300px;
 }
+
+.mylist {
+  margin-top:100px;
+  height: 800px;
+  overflow-y: scroll;
+}
+
+.my-list-img{
+  height: 200px;
+}
