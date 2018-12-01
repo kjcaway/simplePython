@@ -12,7 +12,7 @@ HOME
 <div class="container">
   <h1>Write something.</h1>
   <hr class="featurette-divider">
-  <form action='./form' method="post">
+  <form action='./form' method="post" enctype="multipart/form-data">
     <div class="form-group row">
       <label for="writer" class="col-sm-2 col-form-label">Writer</label>
       <div class="col-sm-10">
@@ -31,13 +31,24 @@ HOME
         <textarea class="form-control" id="contents" rows="3" name="contents"></textarea>
       </div>
     </div>
-    <div class="form-group row">
+    <!-- <div class="form-group row">
       <div class="offset-sm-2 col-sm-10">
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1">Tags</span>
           </div>
           <input type="text" class="form-control" placeholder="Tags" aria-label="Tags" aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div> -->
+    <div class="form-group row">
+      <label for="contents" class="col-sm-2 col-form-label">Image</label>
+      <div class="col-sm-10">
+        <div class="input-group mb-3">
+          <div class="custom-file">
+            <input type="file" class="custom-file-input" id="file1" name="file1" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="file1">Choose file</label>
+          </div>
         </div>
       </div>
     </div>

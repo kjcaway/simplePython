@@ -1,4 +1,4 @@
-from flask import Flask, render_template, g, session, request
+from flask import Flask, render_template, session, request
 import logging
 from pymongo import MongoClient
 import json
@@ -58,3 +58,6 @@ from .filter import *
 
 app.jinja_env.filters['datetime'] = format_datetime
 
+
+app.config['upload_file_path'] = config['upload_file_path'] ## ex. /uploads
+app.config['allow_extensions'] = set(config['allow_extensions']) ## ex. ["jpg","jpeg","png","gif"]
